@@ -196,11 +196,15 @@ require('lazy').setup({
         clangd = {},
       }
 
-      local ensure_installed = vim.tbl_keys(servers)
-      vim.list_extend(ensure_installed, {
+      local ensure_installed = {
+        'typescript-language-server',
+        'rust-analyzer',
+        'clangd',
         'lua-language-server',
+        'prettier',
+        'clang-format',
         'stylua',
-      })
+      }
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
